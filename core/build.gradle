@@ -3,6 +3,7 @@ apply plugin: 'application'
 dependencies {
     compile 'log4j:log4j:1.2.17'
     compile project(':shared')
+    testCompile 'junit:junit:4.11'
 }
 
 mainClassName = 'org.elkd.core.server.Main'
