@@ -3,6 +3,7 @@ package org.elkd.core.log;
 import com.google.common.collect.ImmutableMap;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import org.elkd.core.server.GsonFactory;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ public class DocumentTest {
   private static final String VAL_1 = "val1";
   private static final String KEY_2 = "key2";
   private static final String VAL_2 = "val2";
-  private static final Gson mGson = GsonFactory.getInstance().getGson();
+  private static final Gson GSON = GsonFactory.getInstance().getGson();
 
   private Document.Builder<Object> mDocumentBuilder;
 
@@ -60,9 +61,9 @@ public class DocumentTest {
     final Document<Object> doc = mDocumentBuilder.build();
 
     // When
-    final String serialized = mGson.toJson(doc);
+    final String serialized = GSON.toJson(doc);
     final Type docType = new TypeToken<Document<Object>>() { }.getType();
-    final Document<Object> deSerializedDoc = mGson.fromJson(serialized, docType);
+    final Document<Object> deSerializedDoc = GSON.fromJson(serialized, docType);
 
     // Then
     assertNotNull(serialized);
