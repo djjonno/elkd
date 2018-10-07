@@ -1,11 +1,10 @@
 package org.elkd.shared.json;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class GsonUtilsTest {
   private static final String KEY = "key";
